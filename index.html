@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>loading</title>
+  </head>
+  <body>
+    <video id="fullscreen-video" autoplay muted>
+      <source src="logo.mp4" type="video/mp4" />
+      Il tuo browser non supporta il tag video.
+    </video>
+
+    <script>
+      const video = document.getElementById("fullscreen-video");
+      let playCount = 0;
+
+      video.addEventListener("ended", () => {
+        playCount++;
+        if (playCount < 2) {
+          video.play(); // Riproduci il video di nuovo
+        } else {
+          window.location.href = "home/home.html";
+        }
+      });
+    </script>
+  </body>
+</html>

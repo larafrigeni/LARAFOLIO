@@ -1,0 +1,310 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../font/inter.ttf") format("truetype");
+}
+
+.logo-container {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 1000;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.logo-video {
+  width: 149px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logo-container:hover .logo {
+  opacity: 0;
+}
+
+.logo-container:hover .logo-video {
+  opacity: 1;
+}
+
+.button {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 1000;
+
+}
+
+.button button {
+  padding: 8px 25px 10px 25px;
+  color: black;
+  background: transparent;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+.button button#cose {
+  border: 2px solid black;
+}
+
+.button button:hover {
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: clamp(60px, 10vw, 135px);
+  line-height: 0.9;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Inizialmente i contenuti sono inline */
+.line1,
+.line2 {
+  display: inline;
+}
+
+.video-center {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 20px;
+  z-index: -1;
+}
+
+.video-center video {
+  width: clamp(200px, 30vw, 380px);
+  height: auto;
+}
+
+.video-asterisk {
+  position: absolute;
+  top: 85%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.video-asterisk video {
+  width: clamp(150px, 25vw, 300px);
+  height: auto;
+}
+
+.black-rectangle {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  min-height: 900px;
+  background-color: black;
+  border-radius: clamp(20px, 3vw, 40px);
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.black-rectangle-text {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 400;
+  line-height: 0.9;
+  padding: 2rem clamp(20px, 5vw, 300px);
+  flex: 1 1 300px;
+}
+
+.black-rectangle-text-2 {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 400;
+  padding: 2rem;
+  margin-left: 0;
+  flex: 1 1 300px;
+}
+
+.big-dot {
+  font-size: 9.5em;
+  font-weight: bold;
+}
+
+.currently-obsessed {
+  position: absolute;
+  top: calc(100% + 1100px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 400;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.hobbies-video {
+  height: 100px;
+  width: auto;
+  margin-top: -10px;
+}
+
+.red-square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  top: calc(100% + 1300px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button button {
+  color: black; /* Colore normale */
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.button.scrolled button {
+  color: white; /* Cambia colore quando si trova sopra il rettangolo nero */
+}
+
+.button button#cose {
+  border: 2px solid black;
+}
+
+.button.scrolled button#cose {
+  border: 2px solid white; /* Cambia il bordo in bianco */
+}
+
+
+/* Media Query per desktop: la seconda riga diventa blocco */
+@media screen and (min-width: 769px) {
+  h1 {
+    left: 14%; /* Sposta l'elemento a sinistra */
+    transform: translate(0, -50%); /* Rimuove la traslazione orizzontale */
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: auto; /* Impedisce che l'elemento si estenda su tutta la larghezza */
+  }
+}
+@media screen and (min-width: 1025px) {
+  h1 {
+    left: 18%; /* Sposta l'elemento a sinistra */
+    transform: translate(0, -50%); /* Rimuove la traslazione orizzontale */
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: auto; /* Impedisce che l'elemento si estenda su tutta la larghezza */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .logo-container {
+    top: 20px;
+    left: 20px;
+  }
+
+  .logo,
+  .logo-video {
+    width: 100px;
+  }
+
+  .button {
+    top: 20px;
+    right: 20px;
+  }
+
+  .black-rectangle {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .black-rectangle-text,
+  .black-rectangle-text-2 {
+    margin: 0;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-center {
+    margin: 1rem 0;
+    justify-content: center;
+  }
+
+  .video-asterisk {
+    top: 90%;
+    left: 50%;
+  }
+
+  .video-asterisk video {
+    display: block; 
+    width: clamp(150px, 25vw, 300px);
+    height: auto;
+  }  
+
+  .button button {
+    padding: 5px 15px 7px 15px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Li centra orizzontalmente */
+    align-items: center; /* Li allinea verticalmente */
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001; /* Assicura che il logo sia sopra a tutto, anche ai pulsanti */
+  }
+
+  .black-rectangle {
+    border-radius: 20px;
+  }
+
+  .hobbies-video {
+    height: 80px;
+  }
+}
