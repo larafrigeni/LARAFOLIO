@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../font/Inter-Italic.woff2') format('woff2'),
+      url('../font/Inter-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../font/Inter-Regular.woff2') format('woff2'),
+      url('../font/Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.logo-container {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 1000;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.logo-video {
+  width: 149px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logo-container:hover .logo {
+  opacity: 0;
+}
+
+.logo-container:hover .logo-video {
+  opacity: 1;
+}
+
+.button {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 1000;
+
+}
+
+.button button {
+  padding: 8px 25px 10px 25px;
+  color: black;
+  background: transparent;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+.button button#cose {
+  border: 2px solid black;
+}
+
+.button button:hover {
+  font-weight: 600;
+}
+
+
+.button button {
+  color: black; /* Colore normale */
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.button.scrolled button {
+  color: white; /* Cambia colore quando si trova sopra il rettangolo nero */
+}
+
+.button button#cose {
+  border: 2px solid black;
+}
+
+.button.scrolled button#cose {
+  border: 2px solid white; /* Cambia il bordo in bianco */
+}
+
+.media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.full-width {
+  width: 101%;
+  height: auto;
+  object-fit: cover;
+  margin: -10px;
+  display: block; /* Rimuove eventuali spazi dovuti a inline elements */
+  padding: 0; /* Rimuove padding */
+  border: none; /* Assicura che non ci siano bordi */
+}
+
+video {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Media Query per desktop: la seconda riga diventa blocco */
+@media screen and (min-width: 769px) {
+}
+@media screen and (min-width: 1025px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .logo-container {
+    top: 20px;
+    left: 20px;
+  }
+
+  .logo,
+  .logo-video {
+    width: 100px;
+  }
+
+  .button {
+    top: 20px;
+    right: 20px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+
+  .button button {
+    padding: 5px 15px 7px 15px;
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Li centra orizzontalmente */
+    align-items: center; /* Li allinea verticalmente */
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001; /* Assicura che il logo sia sopra a tutto, anche ai pulsanti */
+  }
+}
